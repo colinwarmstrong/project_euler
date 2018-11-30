@@ -7,7 +7,7 @@
 sum = 0
 
 (1...1000).each do |int|
-  sum += int if (int % 3) == 0 || (int % 5) == 0
+  sum += int if int % 3 == 0 || int % 5 == 0
 end
 
 puts sum
