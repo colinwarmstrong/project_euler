@@ -7,21 +7,18 @@
 # By considering the terms in the Fibonacci sequence whose
 # values do not exceed four million, find the sum of the
 # even-valued terms.
-require 'pry'
 
-fibonacci_sequence = [1]
-previous_term = 0
-current_term = 1
+fibonacci_sequence = [1, 2]
+previous_term = 1
+current_term = 2
 next_term = previous_term + current_term
 
-while fibonacci_sequence[-1] <= 4000000 do
+while next_term <= 4000000 do
   fibonacci_sequence << next_term
-  next_term = previous_term + current_term
   previous_term = current_term
   current_term = next_term
+  next_term = previous_term + current_term
 end
-
-fibonacci_sequence.delete_at(-1)
 
 sum = fibonacci_sequence.find_all { |int| int.even? }.sum
 
