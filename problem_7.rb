@@ -9,7 +9,7 @@ solution = 0
 i = 1
 
 Prime.each do |prime|
-  if i == 10001
+  if i == 10_001
     solution = prime
     break
   else

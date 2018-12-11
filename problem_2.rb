@@ -13,13 +13,13 @@ previous_term = 1
 current_term = 2
 next_term = previous_term + current_term
 
-while next_term <= 4000000 do
+while next_term <= 4_000_000
   fibonacci_sequence << next_term
   previous_term = current_term
   current_term = next_term
   next_term = previous_term + current_term
 end
 
-sum = fibonacci_sequence.find_all { |int| int.even? }.sum
+sum = fibonacci_sequence.find_all(&:even).sum
 
 puts sum

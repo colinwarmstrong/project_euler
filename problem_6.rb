@@ -8,13 +8,13 @@
 #
 # Hence the difference between the sum of the squares of the
 # first ten natural numbers and the square of the sum is
-# 3025 − 385 = 2640.
+# 3025 - 385 = 2640.
 #
 # Find the difference between the sum of the squares of the
 # first one hundred natural numbers and the square of the sum.
 
-sum_of_squares = (1..100).sum { |number| number ** 2 }
-square_of_sum  = (1..100).sum ** 2
+sum_of_squares = (1..100).sum { |number| number**2 }
+square_of_sum  = (1..100).sum**2
 
 difference = square_of_sum - sum_of_squares
 

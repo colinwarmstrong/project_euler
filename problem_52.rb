@@ -8,15 +8,13 @@
 number = 1
 
 def multiples_contain_same_digits?(number)
-  if (2..6).all? { |multiplier| number.digits.sort == (multiplier * number).digits.sort }
-    return true
+  if (2..6).all? { |int| number.digits.sort == (int * number).digits.sort }
+    true
   else
-    return false
+    false
   end
 end
 
-until multiples_contain_same_digits?(number) do
-  number += 1
-end
+number += 1 until multiples_contain_same_digits?(number)
 
 puts number

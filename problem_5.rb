@@ -9,14 +9,14 @@ number = 20
 dividers = [11, 12, 13, 14, 15, 16, 17, 18, 19]
 
 def divisible_by_numbers_1_to_20?(number, dividers)
-  if dividers.all? { |int| number % int == 0 }
-    return true
+  if dividers.all? { |int| (number % int).zero? }
+    true
   else
-    return false
+    false
   end
 end
 
-until divisible_by_numbers_1_to_20?(number, dividers) do
+until divisible_by_numbers_1_to_20?(number, dividers)
   multiplier += 1
   number = multiplier * 20
 end

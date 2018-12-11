@@ -6,7 +6,7 @@ require 'prime'
 
 sum = 0
 
-Prime.each(1999999) do |prime|
+Prime.each(1_999_999) do |prime|
   sum += prime
 end
 
