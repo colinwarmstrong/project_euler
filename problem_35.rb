@@ -8,7 +8,6 @@
 # How many circular primes are there below one million?
 
 require 'prime'
-require 'pry'
 
 def find_circular_primes(upper_limit)
   circular_primes = []
