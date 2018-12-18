@@ -15,13 +15,17 @@ require 'prime'
 
 primes = (1488...9999).find_all(&:prime?)
 
+def valid_sequence?(prime1, prime2, prime3)
+  prime3 - prime2 == prime2 - prime1 &&
+    prime1.digits.sort == prime2.digits.sort &&
+    prime2.digits.sort == prime3.digits.sort &&
+    prime3.digits.sort == prime1.digits.sort
+end
+
 primes.each do |prime1|
   primes.find_all { |prime2| prime2 > prime1 }.each do |prime2|
     primes.find_all { |prime3| prime3 > prime2 }.each do |prime3|
-      next unless prime3 - prime2 == prime2 - prime1 &&
-                  prime1.digits.sort == prime2.digits.sort &&
-                  prime2.digits.sort == prime3.digits.sort &&
-                  prime3.digits.sort == prime1.digits.sort
+      next unless valid_sequence?(prime1, prime2, prime3)
 
       puts prime1.to_s + prime2.to_s + prime3.to_s
       exit
