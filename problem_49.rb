@@ -13,7 +13,7 @@
 
 require 'prime'
 
-primes = (1488...9999).find_all(&:prime?)
+primes = (1488..9999).find_all(&:prime?)
 
 def valid_sequence?(prime1, prime2, prime3)
   prime3 - prime2 == prime2 - prime1 &&
